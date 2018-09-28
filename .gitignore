@@ -1,0 +1,12 @@
+node_modules/
+dist/
+old/
+misc/
+.idea/
+.DS_STORE
+._.DS_STORE
+.yarnclean
+.vscode
+.rpt2_cache
+yarn-error.log
+todo.md

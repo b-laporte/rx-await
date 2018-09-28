@@ -1,0 +1,54 @@
+{
+    "name": "rx-await",
+    "version": "0.0.0-SNAPSHOT",
+    "description": "Rx Programming with async functions",
+    "keywords": [
+        "observable",
+        "task",
+        "async",
+        "await",
+        "$$",
+        "rxjs"
+    ],
+    "repository": {
+        "type": "git"
+    },
+    "main": "...",
+    "rollup-plugin-main": "dist/rollup-plugin-rx-await.es.js",
+    "author": "Bertrand Laporte",
+    "scripts": {
+        "clean": "rm -rf dist/",
+        "build-plugin": "yarn run clean && rollup --config rollup.plugin.config.js",
+        "build-test": "rollup -c rollup.test.config.js",
+        "build": "yarn run build-plugin && yarn run build-test",
+        "build-samples": "yarn run build-plugin && cpx 'src/samples/**/*.{html,js,css,svg,png,json}' dist && rollup -c rollup.samples.config.js",
+        "mocha": "mocha dist/test.js --reporter dot",
+        "test": "yarn run build && yarn run mocha"
+    },
+    "license": "Apache-2.0",
+    "bugs": {},
+    "devDependencies": {
+        "magic-string": "^0.25.0",
+        "rollup": "^0.61.2",
+        "rollup-watch": "^4.3.1",
+        "rollup-plugin-typescript2": "^0.15.0",
+        "rollup-plugin-node-resolve": "^3.3.0",
+        "rollup-plugin-node-builtins": "^2.1.2",
+        "rollup-plugin-uglify": "^4.0.0",
+        "rollup-plugin-minify-es": "^1.1.1",
+        "rollup-plugin-gzip": "^1.3.0",
+        "uglify-es": "^3.3.9",
+        "typescript": ">=2.9.2",
+        "mocha": "^5.2.0",
+        "cpx": "1.5.0",
+        "http-server": "^0.11.1",
+        "@types/node": "^10.3.5",
+        "@types/mocha": "^5.2.3"
+    },
+    "dependencies": {
+        "typescript": ">=2.9.2"
+    },
+    "engines": {
+        "node": ">=10.3.5"
+    }
+}
